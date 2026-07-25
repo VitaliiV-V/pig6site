@@ -12,6 +12,13 @@ app = FastAPI(
 async def root():
     return FileResponse("index.html")
 
+@app.get("/style.css")
+async def root():
+    return FileResponse("style.css")
+
+@app.get("/script.js")
+async def root():
+    return FileResponse("script.js")
 
 @app.get("/pig6.jpg")
 async def image():
