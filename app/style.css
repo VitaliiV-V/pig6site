@@ -2256,16 +2256,20 @@ footer p {
 
 }
 
-
 .announcement {
-    transition: transform .4s ease, opacity .4s ease;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 55px;
+
+    z-index: 9999;
+
+    transition: transform .4s ease;
 }
 
 
 .announcement.scroll-hide {
-
     transform: translateY(-100%);
-
-    opacity:0;
-
 }
