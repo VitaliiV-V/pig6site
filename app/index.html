@@ -1,466 +1,829 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>Pig-6 — Designed to protect</title>
+        <title>Pig-6 — Telegram Channel Protection System</title>
 
-        <style>
-* {
-    box-sizing: border-box;
-}
+        <meta name="description"
+            content="Pig-6 is a next-generation Telegram channel protection system with AI moderation, advanced security and intelligent protection.">
 
-body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display",
-                 "SF Pro Text", Arial, sans-serif;
-    background: #000;
-    color: white;
-    overflow-x: hidden;
-}
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-section {
-    min-height: 50vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 80px 20px;
-}
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+            rel="stylesheet">
 
-.container {
-    max-width: 1100px;
-    width: 100%;
-    text-align: center;
-}
+        <link rel="stylesheet" href="style.css">
+        <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 
-h1 {
-    font-size: clamp(50px, 10vw, 110px);
-    margin: 0;
-    letter-spacing: -5px;
-}
+        <meta property="og:title"
+            content="Pig-6 — Telegram Channel Protection System">
 
-h2 {
-    font-size: clamp(35px, 5vw, 60px);
-    letter-spacing: -2px;
-}
+        <meta property="og:description"
+            content="Next-generation Telegram security system with AI moderation and advanced protection.">
 
-p {
-    font-size: 22px;
-    line-height: 1.5;
-    color: #aaa;
-    max-width: 800px;
-    margin: 25px auto;
-}
+        <meta property="og:image"
+            content="assets/preview.png">
 
-.hero span {
-    color: #888;
-}
+        <meta property="og:type"
+            content="website">
 
-.button {
-    display: inline-block;
-    margin-top: 30px;
-    padding: 15px 35px;
-    background: white;
-    color: black;
-    border-radius: 40px;
-    text-decoration: none;
-    font-size: 18px;
-    transition: .3s;
-}
-
-.button:hover {
-    transform: scale(1.05);
-}
-
-.card {
-    background: #111;
-    border-radius: 35px;
-    padding: 45px;
-    margin: 25px 0;
-    text-align: left;
-}
-
-.card h3 {
-    font-size: 32px;
-}
-
-.card p {
-    font-size: 18px;
-}
-
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
-    gap:20px;
-}
-
-.dark {
-    background:#050505;
-}
-
-.fade {
-    opacity:0;
-    transform:translateY(40px);
-    transition:1s;
-}
-
-.fade.show {
-    opacity:1;
-    transform:none;
-}
-
-.footer {
-    min-height:auto;
-    padding:50px;
-    color:#777;
-}
-
-.logo {
-    font-size:25px;
-    font-weight:700;
-}
-
-.small {
-    font-size:16px;
-}
-.hero-image img {
-    width: min(420px, 80vw);
-    filter:
-    drop-shadow(0 0 50px rgba(255,255,255,0.25));
-    animation: float 5s infinite ease-in-out;
-}
-
-.hero {
-    min-height: 100vh;
-    padding: 0 20px;
-}
-
-
-.hero-content {
-    margin-top: -70px;
-    gap: 0;
-}
-
-
-.hero-logo {
-    width: min(280px, 65vw);
-    margin-bottom: 15px;
-}
-
-
-.hero h1 {
-    margin: 0 0 10px;
-}
-
-
-.hero p {
-    margin: 0 0 20px;
-}
-
-
-.hero .button {
-    margin-top: 0;
-}
-
-@keyframes float {
-    0%,100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-20px);
-    }
-}
-
-.hero-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-
-.hero-logo {
-    width: min(350px, 70vw);
-    margin-bottom: 40px;
-    border-radius: 30px;
-    filter:
-    drop-shadow(0 0 60px rgba(255,255,255,0.25));
-
-    animation: float 5s ease-in-out infinite;
-}
-
-.hero p {
-    margin-top: 0;
-}
-.hero {
-    padding-top: 120px !important;
-}
-
-</style>
-
+        <meta name="theme-color"
+            content="#000000">
     </head>
 
     <body>
-        <!-- Уведомление -->
-        <div id="notice" style="
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background: #22c55e;
-            color: white;
-            padding: 20px 70px 20px 25px;
-            font-size: 30px;
-            font-weight: 700;
-            text-align: center;
-            z-index: 9999;
-            box-shadow: 0 10px 30px rgba(34,197,94,0.35);
-        ">
-                    Тимофей Гей
+        <div class="loader">
 
-            <button onclick="document.getElementById('notice').remove()" style="
-                    position:absolute;
-                    right:25px;
-                    top:50%;
-                    transform:translateY(-50%);
-                    background:none;
-                    border:none;
-                    color:white;
-                    font-size:40px;
-                    cursor:pointer;
-                    line-height:1;
-                ">
-                ×
-            </button>
+            <div>
+                Pig-6
+            </div>
+
         </div>
+        <div class="background-glow"></div>
 
-        <section class="hero">
-            <div class="container hero-content fade">
+        <header class="navbar">
 
-                <img class="hero-logo" src="pig6.jpg" alt="Pig-6">
-
-                <h1>
-                    Pig-6
-                </h1>
-
-                <p>
-                    Следующее поколение защиты Telegram-каналов.
-                    <br>
-                    <span>Designed to protect.</span>
-                </p>
-
-                <a class="button" href>
-                    Открыть Pig-6
-                </a>
-
+            <div class="logo">
+                Pig-6
             </div>
-        </section>
 
-        <section>
-            <div class="container fade">
+            <nav>
+                <a href="#features">Features</a>
+                <a href="#architecture">Architecture</a>
+                <a href="#security">Security</a>
+                <a href="#commands">Commands</a>
+            </nav>
 
-                <h2>
-                    Не просто обновление.
-                    <br>
-                    Новая архитектура.
-                </h2>
+            <a class="github-button"
+                href="https://github.com/VitaliiV-V/Pig6bot"
+                target="_blank">
+                GitHub
+            </a>
 
-                <p>
-                    Pig-6 полностью переосмысливает систему защиты каналов.
-                    Знакомый внешний вид.
-                    Полностью переработанная внутренняя структура.
-                </p>
+        </header>
 
-            </div>
-        </section>
+        <main>
 
-        <section class="dark">
-            <div class="container">
+            <section class="hero">
 
-                <h2 class="fade">
-                    Защита стала умнее.
-                </h2>
+                <div class="hero-content reveal">
 
-                <div class="grid">
+                    <h1>
+                        Pig-6
+                    </h1>
 
-                    <div class="card fade">
-                        <h3>AI Moderation</h3>
-                        <p>
-                            Интеллектуальный анализ сообщений,
-                            контекстная обработка и автоматическая помощь
-                            в модерации.
-                        </p>
-                    </div>
-
-                    <div class="card fade">
-                        <h3>Smart Protection</h3>
-                        <p>
-                            Автоматическое обнаружение нарушений,
-                            блокировка спама и улучшенная проверка источников
-                            сообщений.
-                        </p>
-                    </div>
-
-                    <div class="card fade">
-                        <h3>Judgment Day</h3>
-                        <p>
-                            Система принятия решений для сложных ситуаций
-                            и расширенного контроля защиты.
-                        </p>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <div class="container fade">
-
-                <h2>
-                    UUID Protection
-                </h2>
-
-                <p>
-                    Уникальная система проверки владельцев.
-                    <br>
-                    Сообщения проходят проверку доверия,
-                    чтобы система понимала источник.
-                </p>
-
-                <div class="card">
+                    <h2>
+                        Next-generation
+                        Telegram protection
+                    </h2>
 
                     <p>
-                        Защита использует невидимые Unicode-идентификаторы,
-                        создавая дополнительный уровень проверки
-                        администраторов.
+                        Intelligent security system designed to protect
+                        channels,
+                        verify administrators and provide advanced AI
+                        moderation.
                     </p>
 
-                </div>
+                    <div class="hero-buttons">
 
-            </div>
-        </section>
+                        <a class="primary-button"
+                            href="https://github.com/VitaliiV-V/Pig6bot"
+                            target="_blank">
+                            Explore GitHub
+                        </a>
 
-        <section class="dark">
-            <div class="container">
+                        <a class="secondary-button"
+                            href="#features">
+                            Discover Pig-6
+                        </a>
 
-                <h2 class="fade">
-                    Extreme Protection
-                </h2>
-
-                <p>
-                    Максимальный уровень защиты
-                    для владельцев и суперпользователей.
-                </p>
-
-                <div class="card fade">
-
-                    <p>
-                        Специальный режим с усиленной системой идентификации,
-                        созданный для случаев, где требуется максимальный
-                        контроль.
-                    </p>
-
-                </div>
-
-            </div>
-        </section>
-
-        <section>
-            <div class="container">
-
-                <h2 class="fade">
-                    Архитектура нового поколения
-                </h2>
-
-                <div class="grid">
-
-                    <div class="card fade">
-                        <h3>Pig-6 Core</h3>
-                        <p>
-                            Основная система защиты и управления.
-                        </p>
-                    </div>
-
-                    <div class="card fade">
-                        <h3>Pig-6 Logs</h3>
-                        <p>
-                            Распределённое логирование,
-                            события и история действий.
-                        </p>
-                    </div>
-
-                    <div class="card fade">
-                        <h3>Pig-6 AI</h3>
-                        <p>
-                            Искусственный интеллект,
-                            анализ и обработка контекста.
-                        </p>
                     </div>
 
                 </div>
 
-            </div>
-        </section>
+                <div class="hero-card reveal">
 
-        <section class="dark">
-            <div class="container fade">
+                    <div class="glass-card">
+
+                        <div class="status">
+
+                            <span></span>
+
+                            Protection Active
+
+                        </div>
+
+                        <div class="system-title">
+
+                            Pig-6 Core
+
+                        </div>
+
+                        <div class="system-items">
+
+                            <div>
+                                AI Moderation
+                            </div>
+
+                            <div>
+                                UUID Verification
+                            </div>
+
+                            <div>
+                                Security Engine
+                            </div>
+
+                            <div>
+                                Distributed Logs
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <section class="statement reveal">
 
                 <h2>
-                    Создано для контроля.
-                    <br>
-                    Разработано для защиты.
-                </h2>
-
-                <p>
-                    Единая конфигурация.
-                    Docker-инфраструктура.
-                    Живое управление.
-                    Сервисная архитектура.
-                </p>
-
-            </div>
-        </section>
-
-        <section class="footer">
-            <div class="container">
-
-                <div class="logo">
-                    Pig-6
-                </div>
-
-                <p class="small">
                     Designed to protect.
-                    <br>
-                    Разработано Hammam Inc.
+                </h2>
+
+                <p>
+                    Security should work quietly.
                 </p>
 
-                <a class="button" href>
-                    Telegram
-                </a>
+                <span>
+                    Pig-6 focuses on reliability, verification
+                    and intelligent protection without unnecessary complexity.
+                </span>
 
-            </div>
-        </section>
+            </section>
 
-        <script>
+            <section id="features" class="features">
 
-const elements = document.querySelectorAll(".fade");
+                <div class="section-title reveal">
 
-const observer = new IntersectionObserver(entries=>{
-    entries.forEach(entry=>{
-        if(entry.isIntersecting){
-            entry.target.classList.add("show");
-        }
-    });
-},{
-    threshold:0.15
-});
+                    <h2>
+                        Powerful protection.
+                    </h2>
 
+                    <p>
+                        Everything needed to secure a modern Telegram channel.
+                    </p>
 
-elements.forEach(el=>observer.observe(el));
+                </div>
 
-</script>
+                <div class="feature-grid">
+
+                    <div class="feature-card reveal">
+
+                        <h3>
+                            AI Moderation
+                        </h3>
+
+                        <p>
+                            Real-time message analysis,
+                            context-aware decisions and intelligent responses.
+                        </p>
+
+                    </div>
+
+                    <div class="feature-card reveal">
+
+                        <h3>
+                            Unified Configuration
+                        </h3>
+
+                        <p>
+                            Centralized settings,
+                            live configuration editing and dynamic updates.
+                        </p>
+
+                    </div>
+
+                    <div class="feature-card reveal">
+
+                        <h3>
+                            Distributed Logging
+                        </h3>
+
+                        <p>
+                            Independent logging service,
+                            security history and moderation tracking.
+                        </p>
+
+                    </div>
+
+                    <div class="feature-card reveal">
+
+                        <h3>
+                            Docker Infrastructure
+                        </h3>
+
+                        <p>
+                            Predictable deployment,
+                            isolated services and easy scaling.
+                        </p>
+
+                    </div>
+
+                    <div class="feature-card reveal">
+
+                        <h3>
+                            UUID Protection
+                        </h3>
+
+                        <p>
+                            Administrator verification,
+                            Unicode signatures and anti-spoofing layers.
+                        </p>
+
+                    </div>
+
+                    <div class="feature-card reveal">
+
+                        <h3>
+                            Content Protection
+                        </h3>
+
+                        <p>
+                            Secure file processing,
+                            controlled access and protected media handling.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+            <section id="architecture" class="architecture">
+
+                <div class="section-title reveal">
+
+                    <h2>
+                        One system.
+                        Multiple layers.
+                    </h2>
+
+                    <p>
+                        Pig-6 uses a service-based architecture built for
+                        security,
+                        scalability and reliability.
+                    </p>
+
+                </div>
+
+                <div class="architecture-box reveal">
+
+                    <div class="architecture-node">
+
+                        <h3>
+                            Pig-6 Core
+                        </h3>
+
+                        <p>
+                            Main protection engine.
+                            Message security, channel control
+                            and administrator verification.
+                        </p>
+
+                    </div>
+
+                    <div class="architecture-line"></div>
+
+                    <div class="architecture-node">
+
+                        <h3>
+                            Pig-6 AI
+                        </h3>
+
+                        <p>
+                            Artificial intelligence subsystem.
+                            Context analysis, moderation decisions
+                            and intelligent responses.
+                        </p>
+
+                    </div>
+
+                    <div class="architecture-line"></div>
+
+                    <div class="architecture-node">
+
+                        <h3>
+                            Pig-6 Logs
+                        </h3>
+
+                        <p>
+                            Independent logging service.
+                            Security events, moderation history
+                            and distributed processing.
+                        </p>
+
+                    </div>
+
+                    <div class="architecture-line"></div>
+
+                    <div class="architecture-node">
+
+                        <h3>
+                            Judgment Day
+                        </h3>
+
+                        <p>
+                            Advanced decision system
+                            for complex security evaluation.
+                        </p>
+
+                    </div>
+
+                    <div class="architecture-line"></div>
+
+                    <div class="architecture-node">
+
+                        <h3>
+                            Pig6Guard
+                        </h3>
+
+                        <p>
+                            Official protection module
+                            for Telegram channel security.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <section class="dark-section reveal">
+
+                <h2>
+                    Artificial Intelligence.
+                </h2>
+
+                <p>
+                    Pig-6 analyzes messages in real time
+                    and assists administrators with intelligent moderation.
+                </p>
+
+                <div class="ai-grid">
+
+                    <div>
+                        <span>
+                            01
+                        </span>
+
+                        <h3>
+                            Context Processing
+                        </h3>
+
+                        <p>
+                            Understanding messages beyond
+                            simple keyword filtering.
+                        </p>
+
+                    </div>
+
+                    <div>
+                        <span>
+                            02
+                        </span>
+
+                        <h3>
+                            Smart Decisions
+                        </h3>
+
+                        <p>
+                            Automated content evaluation
+                            with moderation assistance.
+                        </p>
+
+                    </div>
+
+                    <div>
+                        <span>
+                            03
+                        </span>
+
+                        <h3>
+                            Personality Modes
+                        </h3>
+
+                        <p>
+                            Configurable AI behavior
+                            and interaction style.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <section id="security" class="security">
+
+                <div class="security-content reveal">
+
+                    <h2>
+                        Maximum protection.
+                    </h2>
+
+                    <h3>
+                        Minimum visibility.
+                    </h3>
+
+                    <p>
+                        Extreme Protection provides the highest
+                        security level available in Pig-6.
+                    </p>
+
+                    <ul>
+
+                        <li>
+                            Invisible Unicode security signatures
+                        </li>
+
+                        <li>
+                            UUID administrator verification
+                        </li>
+
+                        <li>
+                            Anti-spoofing protection
+                        </li>
+
+                        <li>
+                            Extended verification rules
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </section>
+
+            <section class="protection-cards">
+
+                <div class="section-title reveal">
+
+                    <h2>
+                        Protection systems
+                    </h2>
+
+                </div>
+
+                <div class="cards-grid">
+
+                    <div class="big-card reveal">
+
+                        <h3>
+                            Whitelist System
+                        </h3>
+
+                        <p>
+                            Manual control over users
+                            allowed to interact with the channel.
+                        </p>
+
+                        <div class="tags">
+
+                            <span>
+                                off
+                            </span>
+
+                            <span>
+                                admins
+                            </span>
+
+                            <span>
+                                admins_only
+                            </span>
+
+                            <span>
+                                manual
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="big-card reveal">
+
+                        <h3>
+                            Anonymous Protection
+                        </h3>
+
+                        <p>
+                            Improved detection of anonymous messages
+                            and better administrator verification.
+                        </p>
+
+                    </div>
+
+                    <div class="big-card reveal">
+
+                        <h3>
+                            Protected Files
+                        </h3>
+
+                        <p>
+                            Secure content handling,
+                            controlled access and file review system.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <section id="commands" class="commands">
+
+                <div class="section-title reveal">
+
+                    <h2>
+                        Simple control.
+                    </h2>
+
+                    <p>
+                        Powerful administration through Telegram commands.
+                    </p>
+
+                </div>
+
+                <div class="command-grid reveal">
+
+                    <div class="command">
+
+                        /blockall
+
+                        <span>
+                            Enable full blocking mode
+                        </span>
+
+                    </div>
+
+                    <div class="command">
+
+                        /smart
+
+                        <span>
+                            Enable smart moderation
+                        </span>
+
+                    </div>
+
+                    <div class="command">
+
+                        /disable
+
+                        <span>
+                            Disable protection
+                        </span>
+
+                    </div>
+
+                    <div class="command">
+
+                        /ban
+
+                        <span>
+                            Ban user
+                        </span>
+
+                    </div>
+
+                    <div class="command">
+
+                        /unban
+
+                        <span>
+                            Unban user
+                        </span>
+
+                    </div>
+
+                    <div class="command">
+
+                        /setwhitelistsmode
+
+                        <span>
+                            Change protection mode
+                        </span>
+
+                    </div>
+
+                    <div class="command">
+
+                        /add
+
+                        <span>
+                            Add whitelist user
+                        </span>
+
+                    </div>
+
+                    <div class="command">
+
+                        /del
+
+                        <span>
+                            Remove whitelist user
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </section>
+            <section class="deployment reveal">
+
+                <div class="section-title">
+
+                    <h2>
+                        Deploy anywhere.
+                    </h2>
+
+                    <p>
+                        Built with modern infrastructure
+                        for predictable and reliable deployment.
+                    </p>
+
+                </div>
+
+                <div class="deployment-grid">
+
+                    <div class="deploy-card">
+
+                        <h3>
+                            Docker
+                        </h3>
+
+                        <p>
+                            Isolated services,
+                            simple updates and scalable infrastructure.
+                        </p>
+
+                    </div>
+
+                    <div class="deploy-card">
+
+                        <h3>
+                            Python 3.10+
+                        </h3>
+
+                        <p>
+                            Modern runtime environment
+                            with Telegram Bot API integration.
+                        </p>
+
+                    </div>
+
+                    <div class="deploy-card">
+
+                        <h3>
+                            Service Architecture
+                        </h3>
+
+                        <p>
+                            Independent modules
+                            working together as one system.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <section class="markov-section dark-section reveal">
+
+                <h2>
+                    Intelligent generation.
+                </h2>
+
+                <p>
+                    Pig-6 includes a Markov-chain-based
+                    text generator trained on stored data.
+                </p>
+
+                <div class="markov-box">
+
+                    <div>
+                        <strong>
+                            N-Gram Model
+                        </strong>
+
+                        <span>
+                            n=1 and n=2 chains
+                        </span>
+                    </div>
+
+                    <div>
+                        <strong>
+                            Context Learning
+                        </strong>
+
+                        <span>
+                            Probabilistic text generation
+                        </span>
+                    </div>
+
+                    <div>
+                        <strong>
+                            Temperature Control
+                        </strong>
+
+                        <span>
+                            Variable generation style
+                        </span>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <section class="closed-source reveal">
+
+                <h2>
+                    Security comes first.
+                </h2>
+
+                <p>
+                    Pig-6 moved to a closed-source model
+                    to protect internal mechanisms,
+                    improve security and prevent misuse.
+                </p>
+
+            </section>
+
+            <section class="github-section reveal">
+
+                <div class="github-box">
+
+                    <h2>
+                        Explore Pig-6.
+                    </h2>
+
+                    <p>
+                        Discover the next generation
+                        Telegram protection system.
+                    </p>
+
+                    <a href="https://github.com/VitaliiV-V/Pig6bot"
+                        target="_blank"
+                        class="primary-button">
+
+                        View GitHub Repository
+
+                    </a>
+
+                </div>
+
+            </section>
+
+            <footer>
+
+                <div class="footer-logo">
+                    Pig-6
+                </div>
+
+                <p>
+                    Created by Hammam Inc.
+                </p>
+
+                <div class="footer-links">
+
+                    <a href="https://github.com/VitaliiV-V/Pig6bot"
+                        target="_blank">
+
+                        GitHub
+
+                    </a>
+
+                    <a href="#">
+                        Documentation
+                    </a>
+
+                </div>
+
+                <p class="copyright">
+
+                    © 2026 Pig-6. All rights reserved.
+
+                </p>
+
+            </footer>
+
+        </main>
+
+        <script src="script.js"></script>
 
     </body>
 </html>
