@@ -2255,3 +2255,17 @@ footer p {
 
 
 }
+
+
+.announcement {
+    transition: transform .4s ease, opacity .4s ease;
+}
+
+
+.announcement.scroll-hide {
+
+    transform: translateY(-100%);
+
+    opacity:0;
+
+}

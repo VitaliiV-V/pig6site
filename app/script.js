@@ -340,7 +340,6 @@ const closeAnnouncement =
     );
 
 
-
 if (closeAnnouncement) {
 
 
@@ -352,6 +351,19 @@ if (closeAnnouncement) {
             announcement.classList.add(
                 "hide"
             );
+
+
+            const navbar =
+                document.querySelector(
+                    ".navbar"
+                );
+
+
+            if (navbar) {
+
+                navbar.style.top = "0";
+
+            }
 
 
             setTimeout(() => {
@@ -366,3 +378,45 @@ if (closeAnnouncement) {
 
 
 }
+
+let lastScroll = 0;
+
+window.addEventListener("scroll", () => {
+
+    const announcement = document.getElementById("announcement");
+    const navbar = document.querySelector(".navbar");
+
+
+    if (!announcement) return;
+
+
+    let currentScroll = window.scrollY;
+
+
+    if (currentScroll > lastScroll && currentScroll > 50) {
+
+        // вниз
+
+        announcement.style.transform = "translateY(-100%)";
+
+        if (navbar) {
+            navbar.style.top = "0";
+        }
+
+
+    } else {
+
+        // вверх
+
+        announcement.style.transform = "translateY(0)";
+
+        if (navbar) {
+            navbar.style.top = "55px";
+        }
+
+    }
+
+
+    lastScroll = currentScroll;
+
+});
