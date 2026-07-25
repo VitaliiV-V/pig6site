@@ -328,95 +328,95 @@ document.addEventListener(
 // Announcement close
 
 
-const announcement =
-    document.getElementById(
-        "announcement"
-    );
+// const announcement =
+//     document.getElementById(
+//         "announcement"
+//     );
 
 
-const closeAnnouncement =
-    document.getElementById(
-        "announcementClose"
-    );
+// const closeAnnouncement =
+//     document.getElementById(
+//         "announcementClose"
+//     );
 
 
-if (closeAnnouncement) {
+// if (closeAnnouncement) {
 
 
-    closeAnnouncement.addEventListener(
-        "click",
-        () => {
+//     closeAnnouncement.addEventListener(
+//         "click",
+//         () => {
 
 
-            announcement.classList.add(
-                "hide"
-            );
+//             announcement.classList.add(
+//                 "hide"
+//             );
 
 
-            const navbar =
-                document.querySelector(
-                    ".navbar"
-                );
+//             const navbar =
+//                 document.querySelector(
+//                     ".navbar"
+//                 );
 
 
-            if (navbar) {
+//             if (navbar) {
 
-                navbar.style.top = "0";
+//                 navbar.style.top = "0";
 
-            }
-
-
-            setTimeout(() => {
-
-                announcement.remove();
-
-            }, 500);
+//             }
 
 
+//             setTimeout(() => {
 
-        });
+//                 announcement.remove();
 
-
-}
-
-let lastScroll = 0;
-
-window.addEventListener("scroll", () => {
-
-    const announcement = document.getElementById("announcement");
-    const navbar = document.querySelector(".navbar");
+//             }, 500);
 
 
-    if (!announcement) return;
+
+//         });
 
 
-    let currentScroll = window.scrollY;
+// }
+
+// let lastScroll = 0;
+
+// window.addEventListener("scroll", () => {
+
+//     const announcement = document.getElementById("announcement");
+//     const navbar = document.querySelector(".navbar");
 
 
-    if (currentScroll > lastScroll && currentScroll > 50) {
-
-        // вниз
-
-        announcement.style.transform = "translateY(-100%)";
-
-        if (navbar) {
-            navbar.style.top = "0";
-        }
+//     if (!announcement) return;
 
 
-    } else {
-
-        // вверх
-
-        announcement.style.transform = "translateY(0)";
-
-        if (navbar) {
-            navbar.style.top = "55px";
-        }
-
-    }
+//     let currentScroll = window.scrollY;
 
 
-    lastScroll = currentScroll;
+//     if (currentScroll > lastScroll && currentScroll > 50) {
 
-});
+//         // вниз
+
+//         announcement.style.transform = "translateY(-100%)";
+
+//         if (navbar) {
+//             navbar.style.top = "0";
+//         }
+
+
+//     } else {
+
+//         // вверх
+
+//         announcement.style.transform = "translateY(0)";
+
+//         if (navbar) {
+//             navbar.style.top = "55px";
+//         }
+
+//     }
+
+
+//     lastScroll = currentScroll;
+
+// });
