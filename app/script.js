@@ -324,3 +324,45 @@ document.addEventListener(
 
 
     });
+
+// Announcement close
+
+
+const announcement =
+    document.getElementById(
+        "announcement"
+    );
+
+
+const closeAnnouncement =
+    document.getElementById(
+        "announcementClose"
+    );
+
+
+
+if (closeAnnouncement) {
+
+
+    closeAnnouncement.addEventListener(
+        "click",
+        () => {
+
+
+            announcement.classList.add(
+                "hide"
+            );
+
+
+            setTimeout(() => {
+
+                announcement.remove();
+
+            }, 500);
+
+
+
+        });
+
+
+}
