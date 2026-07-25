@@ -10,4 +10,4 @@ COPY app/ .
 
 EXPOSE 3000
 
-CMD "python3 main.py"
+CMD ["python3", "main.py"]
