@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Pig-6 — Designed to protect</title>
+
+        <style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display",
+                 "SF Pro Text", Arial, sans-serif;
+    background: #000;
+    color: white;
+    overflow-x: hidden;
+}
+
+section {
+    min-height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 20px;
+}
+
+.container {
+    max-width: 1100px;
+    width: 100%;
+    text-align: center;
+}
+
+h1 {
+    font-size: clamp(50px, 10vw, 110px);
+    margin: 0;
+    letter-spacing: -5px;
+}
+
+h2 {
+    font-size: clamp(35px, 5vw, 60px);
+    letter-spacing: -2px;
+}
+
+p {
+    font-size: 22px;
+    line-height: 1.5;
+    color: #aaa;
+    max-width: 800px;
+    margin: 25px auto;
+}
+
+.hero span {
+    color: #888;
+}
+
+.button {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 15px 35px;
+    background: white;
+    color: black;
+    border-radius: 40px;
+    text-decoration: none;
+    font-size: 18px;
+    transition: .3s;
+}
+
+.button:hover {
+    transform: scale(1.05);
+}
+
+.card {
+    background: #111;
+    border-radius: 35px;
+    padding: 45px;
+    margin: 25px 0;
+    text-align: left;
+}
+
+.card h3 {
+    font-size: 32px;
+}
+
+.card p {
+    font-size: 18px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+    gap:20px;
+}
+
+.dark {
+    background:#050505;
+}
+
+.fade {
+    opacity:0;
+    transform:translateY(40px);
+    transition:1s;
+}
+
+.fade.show {
+    opacity:1;
+    transform:none;
+}
+
+.footer {
+    min-height:auto;
+    padding:50px;
+    color:#777;
+}
+
+.logo {
+    font-size:25px;
+    font-weight:700;
+}
+
+.small {
+    font-size:16px;
+}
+.hero-image img {
+    width: min(420px, 80vw);
+    filter:
+    drop-shadow(0 0 50px rgba(255,255,255,0.25));
+    animation: float 5s infinite ease-in-out;
+}
+
+.hero {
+    min-height: 100vh;
+    padding: 0 20px;
+}
+
+
+.hero-content {
+    margin-top: -70px;
+    gap: 0;
+}
+
+
+.hero-logo {
+    width: min(280px, 65vw);
+    margin-bottom: 15px;
+}
+
+
+.hero h1 {
+    margin: 0 0 10px;
+}
+
+
+.hero p {
+    margin: 0 0 20px;
+}
+
+
+.hero .button {
+    margin-top: 0;
+}
+
+@keyframes float {
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.hero-logo {
+    width: min(350px, 70vw);
+    margin-bottom: 40px;
+    border-radius: 30px;
+    filter:
+    drop-shadow(0 0 60px rgba(255,255,255,0.25));
+
+    animation: float 5s ease-in-out infinite;
+}
+
+.hero p {
+    margin-top: 0;
+}
+
+</style>
+
+    </head>
+
+    <body>
+
+        <section class="hero">
+            <div class="container hero-content fade">
+
+                <img class="hero-logo" src="/pig6.jpg" alt="Pig-6">
+
+                <h1>
+                    Pig-6
+                </h1>
+
+                <p>
+                    Следующее поколение защиты Telegram-каналов.
+                    <br>
+                    <span>Designed to protect.</span>
+                </p>
+
+                <a class="button" href="">
+                    Открыть Pig-6
+                </a>
+
+            </div>
+        </section>
+
+        <section>
+            <div class="container fade">
+
+                <h2>
+                    Не просто обновление.
+                    <br>
+                    Новая архитектура.
+                </h2>
+
+                <p>
+                    Pig-6 полностью переосмысливает систему защиты каналов.
+                    Знакомый внешний вид.
+                    Полностью переработанная внутренняя структура.
+                </p>
+
+            </div>
+        </section>
+
+        <section class="dark">
+            <div class="container">
+
+                <h2 class="fade">
+                    Защита стала умнее.
+                </h2>
+
+                <div class="grid">
+
+                    <div class="card fade">
+                        <h3>AI Moderation</h3>
+                        <p>
+                            Интеллектуальный анализ сообщений,
+                            контекстная обработка и автоматическая помощь
+                            в модерации.
+                        </p>
+                    </div>
+
+                    <div class="card fade">
+                        <h3>Smart Protection</h3>
+                        <p>
+                            Автоматическое обнаружение нарушений,
+                            блокировка спама и улучшенная проверка источников
+                            сообщений.
+                        </p>
+                    </div>
+
+                    <div class="card fade">
+                        <h3>Judgment Day</h3>
+                        <p>
+                            Система принятия решений для сложных ситуаций
+                            и расширенного контроля защиты.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="container fade">
+
+                <h2>
+                    UUID Protection
+                </h2>
+
+                <p>
+                    Уникальная система проверки владельцев.
+                    <br>
+                    Сообщения проходят проверку доверия,
+                    чтобы система понимала источник.
+                </p>
+
+                <div class="card">
+
+                    <p>
+                        Защита использует невидимые Unicode-идентификаторы,
+                        создавая дополнительный уровень проверки
+                        администраторов.
+                    </p>
+
+                </div>
+
+            </div>
+        </section>
+
+        <section class="dark">
+            <div class="container">
+
+                <h2 class="fade">
+                    Extreme Protection
+                </h2>
+
+                <p>
+                    Максимальный уровень защиты
+                    для владельцев и суперпользователей.
+                </p>
+
+                <div class="card fade">
+
+                    <p>
+                        Специальный режим с усиленной системой идентификации,
+                        созданный для случаев, где требуется максимальный
+                        контроль.
+                    </p>
+
+                </div>
+
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+
+                <h2 class="fade">
+                    Архитектура нового поколения
+                </h2>
+
+                <div class="grid">
+
+                    <div class="card fade">
+                        <h3>Pig-6 Core</h3>
+                        <p>
+                            Основная система защиты и управления.
+                        </p>
+                    </div>
+
+                    <div class="card fade">
+                        <h3>Pig-6 Logs</h3>
+                        <p>
+                            Распределённое логирование,
+                            события и история действий.
+                        </p>
+                    </div>
+
+                    <div class="card fade">
+                        <h3>Pig-6 AI</h3>
+                        <p>
+                            Искусственный интеллект,
+                            анализ и обработка контекста.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <section class="dark">
+            <div class="container fade">
+
+                <h2>
+                    Создано для контроля.
+                    <br>
+                    Разработано для защиты.
+                </h2>
+
+                <p>
+                    Единая конфигурация.
+                    Docker-инфраструктура.
+                    Живое управление.
+                    Сервисная архитектура.
+                </p>
+
+            </div>
+        </section>
+
+        <section class="footer">
+            <div class="container">
+
+                <div class="logo">
+                    Pig-6
+                </div>
+
+                <p class="small">
+                    Designed to protect.
+                    <br>
+                    Разработано Hammam Inc.
+                </p>
+
+                <a class="button" href="">
+                    Telegram
+                </a>
+
+            </div>
+        </section>
+
+        <script>
+
+const elements = document.querySelectorAll(".fade");
+
+const observer = new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+        if(entry.isIntersecting){
+            entry.target.classList.add("show");
+        }
+    });
+},{
+    threshold:0.15
+});
+
+
+elements.forEach(el=>observer.observe(el));
+
+</script>
+
+    </body>
+</html>
